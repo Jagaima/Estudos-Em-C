@@ -13,7 +13,7 @@ typedef struct {
     int num_vertices;
 } GrafoDinamico;
 
-No* criar_no(int v) {
+No* criar_no(int v) { 
     No *novo = (No*)malloc(sizeof(No));
     novo->vertice = v;
     novo->prox = NULL;
