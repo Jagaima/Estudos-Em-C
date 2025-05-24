@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// link pra atividade: https://moj.naquadah.com.br/cgi-bin/questao.sh/moj-problems%23euvouestarla
+
 int main() {
     int N, M, J;
     scanf("%d %d %d", &N, &M, &J);                 // N: bairro, m: visitados, J: sondagem por juliano
