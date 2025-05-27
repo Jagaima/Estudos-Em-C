@@ -36,7 +36,7 @@ Graph *GRAPHInit(int V) {
     G->V = V; G->E = 0;
     G->adj = malloc(V * sizeof(link));
     if (!G->adj) { perror("malloc"); exit(1); }
-    for (v = 0; v<v; v++){
+    for (v = 0; v<G->V; v++){
         G->adj[v]=NULL;
     }
     return G;
@@ -67,6 +67,29 @@ int GRAPHEdges (Edge a[], Graph *G) {
 void GRAPHRemove(Graph *G, int v, int w) {
     // implementar remoção de v de adj[w] e de w de adj[v], e G->E-- se achar.
     // (fica um pouco mais verboso que em matriz, mas segue a mesma ideia)
+}
+
+
+void dfsr(Graph *G, int start_vertex) {
+    int *visited = calloc(G->V, sizeof(int)); // Aloca dinamicamente
+    if (!visited) {
+        perror("calloc");
+        exit(1);
+    }
+
+    // Função auxiliar recursiva
+    void dfs_visit(int v) {
+        visited[v] = 1;
+        printf("Visitado: %d\n", v);
+        for (link t = G->adj[v]; t != NULL; t = t->next) {
+            if (!visited[t->v]) {
+                dfs_visit(t->v);
+            }
+        }
+    }
+
+    dfs_visit(start_vertex);
+    free(visited); // Libera memória ao final
 }
 
 void GRAPHShow(Graph *G) {
