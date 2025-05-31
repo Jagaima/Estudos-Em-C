@@ -25,7 +25,7 @@ int main() {
     for (int i = 1; i <= N; i++) {
         scanf("%d %d", &chefe[i], &salario[i]);
         if (i != 1) {
-            subordinados[chefe[i]][numSubordinados[chefe[i]]++] = i;
+            subordinados[chefe[i]][numSubordinados[chefe[i]]++] = i;  // o subordinado é o atual e o anterior (na primeira rodada 1) é o chefe, adiciona isso lá, incrementa os subordinados do chefe e adiciona =i para por ele de filho.
         }
     }
 
